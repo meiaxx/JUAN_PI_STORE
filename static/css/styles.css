@@ -1,0 +1,623 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /** reset  para rems - 62.5% = 10px de 16px **/
+}
+*, *::before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size  : 1.6rem;
+    line-height: 2;
+}
+
+/** Globales **/
+
+img {
+	max-width: 100%;
+}
+.contenedor {
+    max-width: 120rem; /** 120rem = 1200px; **/
+    margin: 0 auto;
+}
+
+h1 {
+	font-size: 3.8rem;
+}
+h2 {
+	font-size: 3.4rem;
+}
+h3 {
+	font-size: 3rem;
+}
+h4 {
+	font-size: 2.6rem;
+}
+
+/** Utilidades **/
+.seccion {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+.centrar-texto {
+    text-align: center; 
+}
+.contenido-centrado{
+    max-width: 800px;
+}
+
+
+/** Botones **/
+.boton-verde {
+    background-color:#12B20A;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    margin-top: 2rem;
+}
+
+
+/** Navegacion **/
+
+.navegacion {
+    padding-top: 4rem;
+}
+
+.navegacion a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 900;
+    font-size: 30px;
+    padding-left: 0;
+    margin-right: 50px;
+
+}
+
+@media only screen and (max-width: 720px)
+{
+    .navegacion a{
+        display: flex;
+    }
+}
+
+
+/** Header **/
+.site-header.inicio {
+    background-color: #2EC715;
+    height: 100%;
+    width: 100%;
+}
+.baner {
+    display: flex;
+    justify-content: space-around;
+}
+.carrito {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 6rem;
+}
+.barra {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    margin: 0 auto;
+}
+.barra a img{
+    max-width: 33%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#conteItemsCarrusel {
+    margin-top: 0.5rem;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.intemCarrusel{
+    height: 100%;
+    position: relative;
+    }
+
+    .tarjetaCarrusel{
+     
+        height: 100%;
+    }
+
+    .flechasCarrusel{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+a{
+    text-decoration: none;
+}
+
+i{
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+#contePuntos{
+    display: flex;
+    justify-content: space-around;
+}
+#conteItemsCarrusel img {
+    animation-direction: all;
+}
+
+#contePuntos > a{
+    font-size: 2em;
+    font-style: none;
+    font-weight: 900;
+    color: rgb(4, 190, 4);
+
+}
+
+.animacion {
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección a vertical para dispositivos móviles */
+    align-items: center; /* Centramos verticalmente */
+    text-align: center; /* Centramos el texto horizontalmente */
+}
+
+.contenedor1 {
+    width: 90%;
+    color: white;
+    font-size: 36px; /* Reducimos el tamaño del texto para dispositivos móviles */
+    line-height: 40px; /* Ajustamos el espaciado entre líneas */
+    background-color: rgb(27, 184, 27);
+    font-weight: 400;
+    overflow: hidden;
+    margin: 10px 0; /* Añadimos margen arriba y abajo para separar del contenido */
+}
+
+.contenedor1 ul {
+    padding-left: 0; /* Quitamos el padding izquierdo */
+}
+
+ul {
+    list-style: none;
+    animation: cambiar 7s infinite;
+    margin: 0; /* Quitamos el margen en todos los lados */
+    padding: 0; /* Quitamos el padding en todos los lados */
+}
+
+@keyframes cambiar {
+    0% {
+        margin-top: 0;
+    }
+    20% {
+        margin-top: 0;
+    }
+    25% {
+        margin-top: -80px; /* Reducimos el valor para dispositivos móviles */
+    }
+    50% {
+        margin-top: -80px; /* Reducimos el valor para dispositivos móviles */
+    }
+    55% {
+        margin-top: -160px; /* Reducimos el valor para dispositivos móviles */
+    }
+    80% {
+        margin-top: -160px; /* Reducimos el valor para dispositivos móviles */
+    }
+    85% {
+        margin-top: -80px; /* Reducimos el valor para dispositivos móviles */
+    }
+    95% {
+        margin-top: -80px; /* Reducimos el valor para dispositivos móviles */
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+
+.contenedor1 p {
+    padding-left: 2rem;
+    font-weight: 700;
+}
+
+
+ul,p{
+margin: 0px;
+}
+
+/** Catalogo **/
+.catalogo {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.anuncio {
+    border: 1px solid #F6F2F2;
+    background: #F6F2F2;
+    line-height: 2.3;
+    padding-bottom: 1.2rem;
+}
+
+
+/* CSS para dispositivos móviles con un ancho máximo de 720px */
+@media screen and (max-width: 720px) {
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  
+    .catalogo .anuncio {
+      width: 100%; /* Esto hará que ocupen todo el ancho disponible, uno debajo del otro */
+      box-sizing: border-box;
+      padding: 10px; /* Espacio entre los elementos */
+    }
+  }
+  
+  
+
+.anuncio img {
+    height: 20rem;
+    width: 30rem
+}
+
+/** Footer **/
+.footer {
+    background-color: #12B20A;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    animation: none;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    animation: none;
+}
+
+.footer-social ul li {
+    font-size: 24px;
+    animation: none;
+}
+
+.footer-social ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    animation: none;
+}
+
+.footer-social ul li a:hover {
+    color: #007bff; /* Cambia a tu color preferido al hacer hover */
+}
+
+@media screen and (min-width: 720px) {
+    .footer{
+        position: relative;
+        bottom:0;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 720px) {
+    .formulario-login {
+        max-width: 50%; /* Ancho del formulario en dispositivos móviles */
+        text-align: center; /* Centra el contenido del formulario */
+        margin-top: 100px;
+    }
+    /* Estilos para etiquetas de formulario y campos de entrada */
+    label {
+        font-size: 18px; /* Tamaño de fuente más grande para dispositivos móviles */
+    }
+
+    input[type="tel"],
+    input[type="password"] {
+        width: 100%; /* Ancho completo para campos de entrada */
+        padding: 15px; /* Espacio interno */
+        margin-bottom: 15px; /* Espacio inferior entre campos */
+    }
+
+    button[type="submit"] {
+        width: 100%; /* Ancho completo para el botón */
+        padding: 15px;
+        font-size: 18px; /* Tamaño de fuente más grande para el botón */
+    }
+
+    p {
+        font-size: 16px; /* Tamaño de fuente más pequeño para el enlace de registro */
+    }
+}
+
+
+
+/* Login */
+.formulario-login {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #12B20A; /* Color verde */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.formulario-login h2 {
+    color: #fff; /* Color del texto */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.formulario-login label {
+    display: block;
+    color: #fff; /* Color del texto de las etiquetas */
+    margin-bottom: 10px;
+}
+
+.formulario-login input[type="tel"],
+.formulario-login input[type="text"],
+.formulario-login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+}
+
+.formulario-login button {
+    background-color: #004527; /* Color verde más oscuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario-login button:hover {
+    background-color: #10c778; /* Cambia el color al pasar el mouse */
+}
+
+
+/* Estilo para el formulario de registro */
+.formulario-registro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #12B20A; /* Color verde */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.formulario-registro h2 {
+    color: #fff; /* Color del texto */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+/* Contenedor de las columnas */
+.columnas {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para cada columna */
+.columna {
+    flex: 1;
+    padding: 0 10px; /* Espacio interno para separar las columnas */
+}
+
+.formulario-registro label {
+    display: block;
+    color: #fff; /* Color del texto de las etiquetas */
+    margin-bottom: 10px;
+}
+
+.formulario-registro input[type="text"],
+.formulario-registro input[type="email"],
+.formulario-registro input[type="tel"],
+.formulario-registro select,
+.formulario-registro input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fff; /* Fondo blanco para los campos */
+}
+
+.formulario-registro select {
+    appearance: none; /* Elimina la apariencia predeterminada del selector */
+}
+
+.formulario-registro button {
+    background-color: #005c33; /* Color verde más oscuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario-registro button:hover {
+    background-color: #004527; 
+}
+
+
+/* Eye Icon */
+.password-input {
+    position: relative;
+  }
+  
+.password-input input {
+    padding-right: 30px; 
+}
+  
+.password-input .password-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    cursor: pointer;
+}
+  
+.password-input .password-toggle i {
+    font-size: 18px;
+    color: #999; 
+  }
+  
+.password-input .password-toggle.active i {
+    color: #333; 
+}
+
+.fa-eye{
+    position: absolute;
+    top: 5%;
+    right: 4%;
+}
+
+.fa-eye-slash{
+    position: absolute;
+    top: 5%;
+    right: 4%;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 720px) {
+    .logo-nav {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .navegacion {
+        margin-top: 10px;
+    }
+
+    .navegacion a {
+        margin: 5px 10px;
+    }
+}
+
+/* Estilos generales para la página de contacto */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formulario-contacto {
+    background-color: #12B20A;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+.enviar input[type="submit"] {
+    background-color: #004527;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enviar input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 720px) {
+    .campo input[type="text"],
+    .campo input[type="email"],
+    .campo textarea {
+        width: 100%;
+    }
+    
+    .enviar input[type="submit"] {
+        width: 100%;
+    }
+}
+
+  

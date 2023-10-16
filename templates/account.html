@@ -1,0 +1,33 @@
+{% extends 'profile_base.html' %}
+
+{% block title %} Tienda || Inversiones JuanPI {% endblock %}
+
+
+{% block content %}
+<section class="container">
+    <div class="products">
+        {% for product in products %}
+            <div class="carts">
+                <div class="animation">
+                    <img src="uploads/{{ product[3] }}" alt="">
+                    <p><span>{{ product[2] }}</span>Bs</p>
+                </div>
+                <p class="title">{{ product[1] }}</p>
+                <button class="quantity-decrease" data-id="{{ product[0] }}"><i class="fa-solid fa-minus" style="margin-right: 10px;"></i></button>
+                <a href="" data-id="{{ product[0] }}" class="btn-add-cart">Agregar</a>
+                <button class="quantity-increase" data-id="{{ product[0] }}"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+<script>
+    function showCart(x){
+        document.getElementById("products-id").style.display = "block";
+    }
+    function closeBtn(){
+         document.getElementById("products-id").style.display = "none";
+    }
+</script>
+{% endblock %}

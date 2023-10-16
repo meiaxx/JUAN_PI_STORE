@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} Registro || Inversiones JuanPI {% endblock %}
+
+{% block content %}
+<br><br>
+<div class="formulario-registro" id="registro-form">
+    <h2>Registro</h2>
+    <form method="POST">
+            <div class="columnas">
+                <div class="columna">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="name" required>
+                    <div class="mensaje-error" id="nombre-error"></div>
+
+
+                    <label for="direccion">Dirección:</label>
+                    <select id="direccion" name="address" required>
+                        <option style="font-size: 20px;" value="Carache">Carache</option>
+                        <option style="font-size: 20px;" value="La Concepción">La Concepción</option>
+                    </select>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="email" required>
+                    <div class="mensaje-error" id="correo-error"></div>
+
+
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                        <div class="password-input">
+                            <input type="password" id="confirmar-contrasena" name="confirm-password" required>
+                            <i class="fa-solid fa-eye" id="show-password2" style="color: #211c1c;"></i>
+                        </div>
+                    <div class="mensaje-error" id="confirmar-contrasena-error"></div>
+
+                </div>
+                <div class="columna">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="surname" required>
+                    <div class="mensaje-error" id="apellido-error"></div>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="phonenumber" pattern="\d*" minlength="11" maxlength="11" required>
+                    <div class="mensaje-error" id="telefono-error"></div>
+
+                    <label for="contrasena">Contraseña:</label>
+                        <div class="password-input">
+                        <input type="password" id="contrasena" name="password">
+                            <i class="fa-solid fa-eye" id="show-password" style="color: #211c1c;"></i>
+                        </div>
+                    <div class="mensaje-error" id="contrasena-error"></div>
+
+                   
+                </div>
+            </div>
+            <button type="submit">Registrarse</button>
+            <br><br>
+            <p style="color: white; text-align: center;">Ya tienes una cuenta? <a href="{{ url_for('login') }}">Inicia Session</a></p>
+
+        </div>
+    </form>
+{% endblock %}

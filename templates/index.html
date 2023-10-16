@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br>
+<section>
+	<div id="conteItemsCarrusel">
+    	<div class="intemCarrusel" id="itemCarrusel-1">
+	        <div class="tarjetaCarrusel" id="tarjetaCarrusel-1"> 
+	            <img src="../static/imagenes/frutas1.jpg" alt="item-1-carrousel">
+	        </div>
+	        <div class="flechasCarrusel">
+	            
+	            <a href="#itemCarrusel-3">
+				</a>
+	        
+	            <a href="#itemCarrusel-2">
+				</a>
+	            
+	        </div>
+        </div>
+
+        <div class="intemCarrusel" id="itemCarrusel-2">
+            <div class="tarjetaCarrusel" id="tarjetaCarrusel-2">
+                <img src="../static/imagenes/verdura1.jpg" alt="item-2-carrousel">
+            </div>
+
+            <div class="flechasCarrusel">
+                
+                <a href="#itemCarrusel-1">
+				</a>
+                <a href="#itemCarrusel-3">
+				</a>
+                
+            </div>
+        </div>
+
+            
+        <div class="intemCarrusel" id="itemCarrusel-3">
+            <div class="tarjetaCarrusel" id="tarjetaCarrusel-3" >
+                <img src="../static/imagenes/fotos_verdura.jpg" alt="item-3-carrousel">
+            </div>
+
+            <div class="flechasCarrusel">
+                
+                <a href="#itemCarrusel-2">
+				</a>
+                <a href="#itemCarrusel-1">
+				</a>
+
+            </div>
+        </div>
+ </div>
+
+ <div id="contePuntos"> 
+    <a href="#itemCarrusel-1">.</a>
+    <a href="#itemCarrusel-2">.</a>
+    <a href="#itemCarrusel-3">.</a>
+ </div>
+	
+	<div class="animacion">
+		<div class="contenedor1">
+			<ul>
+				<li>¡Descubre una nueva experiencia culinaria!</li>
+				<li>Productos frescos y deliciosos te esperan.</li>
+				<li>¡Satisface tus antojos y disfruta de la calidad!</li>
+			</ul>			
+	 	</div>
+ 	</div>
+</section>
+
+<main class="seccion contenedor">
+	<div class="slideshow-container">
+    <div class="catalogo">
+        {% for producto in products[:6] %}
+        <div class="anuncio">
+            <img src="uploads/{{ producto[3] }}">
+            <div class="centrar-texto contenido-anuncio">
+                <h2>{{ producto[1] }}</h2>
+                <p>Bs {{ producto[2] }}</p>
+				<a href="{{ url_for('login') }}" class="boton-verde">Agregar</a>
+			</div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<script>
+    // Variables
+    var currentSlide = 1;
+    var totalSlides = 3; // El número total de slides en tu carrusel
+    var slideInterval = 5000; // Cambia de slide cada 5 segundos (5000 milisegundos)
+
+    // Función para avanzar al siguiente slide
+    function nextSlide() {
+        currentSlide++;
+        if (currentSlide > totalSlides) {
+            currentSlide = 1; // Vuelve al primer slide al llegar al final
+        }
+        showSlide(currentSlide);
+    }
+
+    // Función para mostrar un slide específico
+    function showSlide(slideNumber) {
+        // Oculta todos los slides
+        for (var i = 1; i <= totalSlides; i++) {
+            var slide = document.getElementById('itemCarrusel-' + i);
+            slide.style.display = 'none';
+        }
+        // Muestra el slide deseado
+        var currentSlide = document.getElementById('itemCarrusel-' + slideNumber);
+        currentSlide.style.display = 'block';
+    }
+
+    // Iniciar el carrusel
+    function startCarousel() {
+        setInterval(nextSlide, slideInterval);
+    }
+
+    // Inicia el carrusel al cargar la página
+    window.onload = startCarousel;
+</script>
+
+
+{% endblock %}
+

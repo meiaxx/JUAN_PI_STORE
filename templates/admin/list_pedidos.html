@@ -1,0 +1,46 @@
+{% extends 'admin/panel.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Pedidos</h2>
+    </h2>
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Ubicación</th>
+                <th>Codigo Postal</th>
+                <th>Numero Telefono</th>
+                <th>Enviado</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pedido in pedidos %}
+            <tr>
+                <td>{{ pedido[1] }}</td>
+                <td>{{ pedido[2] }}</td>
+                <td>{{ pedido[3] }}</td>
+                <td>{{ pedido[4] }}</td>
+                <td>{{ pedido[5] }}</td>
+                <td>
+                    {% if pedido[6] == 0 %}
+                        ❌ 
+                    {% elif pedido[6] == 1 %}
+                        ✅ 
+                    {% endif %}
+                </td>
+                <td>{{ pedido[7] }}</td>
+                <td class="button-container">
+                    <a href="/delete_order/{{pedido[0]}}" class="btn btn-delete">Eliminar</a>
+                    <a href="/mark_order/{{pedido[0]}}" class="btn btn-update">Enviar Pedido</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            <!-- Agrega más filas según tus productos -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

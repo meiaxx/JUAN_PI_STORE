@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <title>Finalizar Compra | Inversiones JuanPI</title>
+</head>
+
+<!-- Some Style That I forgot :(-->
+<style>
+    .account-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .account-details, .phone-details {
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 10px;
+        width: 45%;
+    }
+
+    .account-details h2, .phone-details h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .account-details p, .phone-details p {
+        font-size: 16px;
+        margin: 0;
+    }
+</style>
+
+
+
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+              {% for category,message in messages %}
+              <script>
+                  var type = 'info';
+
+                  if("{{category}}" == 'success'){
+                    type = 'success';
+                  }
+                  else{
+                    type = 'error';
+                  }
+                  
+                  Swal.fire({
+                      icon: type,
+                      text: "{{message}}",
+                      showConfirmButton: true,
+                      timer: 5000
+                  })
+              </script>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+
+ 
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Total a Pagar: <strong><span id="totalAmount"></span></strong></h3>
+                <h3>Completa la Información de Envío</h3>
+
+                <div class="account-info">
+                    <div class="account-details">
+                        <h2>Número de cuenta:</h2>
+                        <p>01080378170100082078</p>
+                    </div>
+                    <div class="phone-details">
+                        <h2>Número de teléfono:</h2>
+                        <p>04140363848</p>
+                    </div>
+                </div>
+
+                <form method="post">
+                    <input type="hidden" id="totalCardInput" name="totalCard" value="">
+                    <div class="form-group">
+                        <label for="full_name">Nombre Completo</label>
+                        <input type="text" maxlength="30" name="full_name" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email_address">Correo Electrónico</label>
+                        <input type="email" maxlength="100" name="email_address" class="form-control" required>
+                    </div>
+    
+    
+                    <div class="form-group">
+                        <label for="postal_code">Código Postal</label>
+                        <input type="text" pattern="\d*" maxlength="10" name="postal_code" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="state">Municipio</label>
+                        <input type="text" maxlength="50" name="muni" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="phone_no">Número de Teléfono</label>
+                        <input type="text" pattern="\d*" minlength="10" maxlength="10" name="phone" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="nearest_landmark">Urbanización</label>
+                        <input type="text" maxlength="500" name="urbanization" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <p><strong>Estamos aceptando pedidos solo dentro de Carache.</strong> Por favor, asegúrate de proporcionar información precisa. Ofrecemos la opción de <strong>pago contra entrega</strong>.</p>
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary">Ordenar Ahora</button>
+                </form>
+
+                <br>
+                <a href="{{ url_for('account') }}"><button class="btn btn-danger">Cancelar</button></a>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // Obtén la referencia al elemento donde deseas mostrar el total
+        const totalAmountElement = document.getElementById('totalAmount');
+        totalCard = parseFloat(localStorage.getItem('total')) || 0;
+
+
+
+        // Obtén la referencia al input oculto
+        const totalCardInput = document.getElementById('totalCardInput');
+        // Establece el valor del input con el valor de totalCard
+        totalCardInput.value = totalCard.toFixed(2);
+
+        // Actualiza el contenido del elemento con el valor de totalCard
+        totalAmountElement.textContent = `${totalCard.toFixed(2)} Bs`;
+
+        // Agrega un evento submit al formulario
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            // Borra el valor del 'total' en el localStorage
+            localStorage.removeItem('total');
+ 
+        });
+    });
+
+
+    </script>
+
+</body>
+</html>

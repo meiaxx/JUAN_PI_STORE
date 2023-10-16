@@ -1,0 +1,62 @@
+{% extends 'profile_base.html' %}
+
+{% block title %} Actualizar Perfil {% endblock %}
+
+{% block content %}
+<br><br><br><br><br><br><br><br><br>
+<div class="formulario-registro" id="registro-form">
+    <h2>Actualizar Perfil</h2>
+    <form method="POST">
+            <div class="columnas">
+                <div class="columna">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="name" value="{{ user[1] }}" >
+                    <div class="mensaje-error" id="nombre-error"></div>
+
+                    <label for="direccion">Dirección:</label>
+                    <select id="direccion" name="address" >
+                        <option value="Carache">Carache</option>
+                        <option value="La Concepción">La Concepción</option>
+                    </select>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="email" value="{{ user[3] }}" >
+                    <div class="mensaje-error" id="correo-error"></div>
+
+
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                        <div class="password-input">
+                        <input type="password" id="confirmar-contrasena" name="confirm-password" >
+                        <span id="show-confirm-password" class="password-toggle" onclick="togglePasswordVisibility('confirmar-contrasena')">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        </div>
+                    <div class="mensaje-error" id="confirmar-contrasena-error"></div>
+
+                </div>
+                <div class="columna">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="surname" value="{{ user[2] }}" >
+                    <div class="mensaje-error" id="apellido-error"></div>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="phonenumber" value="{{ user[4] }}" readonly>
+                    <div class="mensaje-error" id="telefono-error"></div>
+
+                    <label for="contrasena">Contraseña:</label>
+                        <div class="password-input">
+                        <input type="password" id="contrasena" name="password">
+                        <span id="show-password" class="password-toggle" onclick="togglePasswordVisibility('contrasena')">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        </div>
+                    <div class="mensaje-error" id="contrasena-error"></div>
+
+                </div>
+            </div>
+            <br>
+            <button type="submit">Actualizar</button>
+        </div>
+    </form> 
+
+{% endblock %}

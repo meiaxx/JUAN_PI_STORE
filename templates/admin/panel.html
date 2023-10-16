@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/panel.css">
+    <link rel="icon" type="image/x-icon" href="../static/imagenes/logo.ico">
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+    </header>
+    <nav>
+        <ul style="list-style: none; text-align: center;">
+            <li style="display: inline; margin-right: 20px;">
+                <a href="{{ url_for('list_products') }}" style="text-decoration: none; color: white;">Productos</a>
+            </li>
+            <li style="display: inline; margin-right: 20px;">
+                <a href="{{ url_for('list_pedidos') }}" style="text-decoration: none; color: white;">Pedidos</a>
+            </li>
+
+            <li style="display: inline; margin-right: 20px;">
+                <a href="{{ url_for('admin_logout') }}" style="text-decoration: none; color: white;">Cerar Sesión</a>
+            </li>            
+        </ul>
+    </nav>        
+
+
+    {% block content %}
+    {% endblock %}
+    
+
+</body>
+</html>

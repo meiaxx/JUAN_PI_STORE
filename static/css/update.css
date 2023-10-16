@@ -1,0 +1,103 @@
+/*
+====================================================
+    Update
+====================================================
+*/
+
+/* Estilo para el formulario de registro */
+.formulario-registro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #12B20A; /* Color verde */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.formulario-registro h2 {
+    color: #fff; /* Color del texto */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+/* Contenedor de las columnas */
+.columnas {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para cada columna */
+.columna {
+    flex: 1;
+    padding: 0 10px; /* Espacio interno para separar las columnas */
+    margin-right: 20px;
+}
+
+.formulario-registro label {
+    display: block;
+    color: #fff; /* Color del texto de las etiquetas */
+    margin-bottom: 10px;
+}
+
+.formulario-registro input[type="text"],
+.formulario-registro input[type="email"],
+.formulario-registro input[type="tel"],
+.formulario-registro select,
+.formulario-registro input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fff; /* Fondo blanco para los campos */
+}
+
+.formulario-registro select {
+    appearance: none; /* Elimina la apariencia predeterminada del selector */
+}
+
+.formulario-registro button {
+    background-color: #005c33; /* Color verde más oscuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario-registro button:hover {
+    background-color: #004527; 
+}
+
+
+/* Eye Icon */
+.password-input {
+    position: relative;
+  }
+  
+.password-input input {
+    padding-right: 30px; 
+}
+  
+.password-input .password-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    cursor: pointer;
+}
+  
+.password-input .password-toggle i {
+    font-size: 18px;
+    color: #999; 
+  }
+  
+.password-input .password-toggle.active i {
+    color: #333; 
+  }

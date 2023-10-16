@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %} Olvidé mi Contraseña || Tu Marca de Frutas {% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="forgot-password-container">
+  <!-- Encabezado -->
+  <header>
+    <img src="../static/imagenes/logo.png" alt="Logo de Tu Marca de Frutas" class="logo">
+    <h1>Restablecer Contraseña</h1>
+  </header>
+
+  <!-- Formulario -->
+  <form class="forgot-password-form" method="POST">
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+
+
+<!-- Estilo CSS para el formulario -->
+<style>
+  .forgot-password-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  header {
+    background-color: #12B20A;
+    color: white;
+    padding: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .forgot-password-form {
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button[type="submit"] {
+    background-color: #12B20A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+</style>
+<!-- Fin del estilo CSS para el formulario -->
+{% endblock %}

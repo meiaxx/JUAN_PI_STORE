@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Iniciar Sesión - Panel de Administración</title>
+    <link rel="stylesheet" href="../../static/css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="../static/imagenes/logo.ico">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Panel</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Acceder</button>
+        </form>
+        <br>
+        <a href="{{ url_for('home' )}}"><button style="background-color: red;">Cancelar</button></a>
+        <br><br>
+
+    <!-- Flash Messages -->
+     {% with messages = get_flashed_messages() %}
+     {% if messages %}
+         {% for message in messages %}
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+         {% endfor %}
+     {% endif %}
+ {% endwith %}
+
+    </div>
+
+    <script>
+        $('.alert').alert()
+    </script>
+
+</body>
+</html>

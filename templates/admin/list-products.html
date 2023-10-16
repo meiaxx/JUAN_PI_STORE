@@ -1,0 +1,32 @@
+{% extends 'admin/panel.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Lista de Productos <a href="{{ url_for('add_product') }}" class="btn btn-add">Agregar</a></h2>
+    <table class="responsive-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in products %}
+            <tr>
+                <td>{{ producto[0] }}</td>
+                <td>{{ producto[1] }}</td>
+                <td>{{ producto[2] }} Bs</td>
+                <td><img src="uploads/{{ producto[3] }}" alt="Producto 1" class="product-image"></td>
+                <td>
+                    <a href="/delete_product/{{producto[0]}}" class="btn btn-delete">Eliminar</a>
+                    <a href="/edit_product/{{producto[0]}}" class="btn btn-update">Actualizar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
